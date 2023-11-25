@@ -10,26 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
+     
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
+          
+      - name: Install gh-pages
+        run: npm install -g gh-pages
+        working-directory: ./client
 
-      - name: Set Git Identity
-        run: |
-            git config user.email "tamaimoisili2243@gmail.com"
-            git config user.name "TamaImoisili"
-
-      - name: Use GH_TOKEN
-        run: echo ${{ secrets.GH_TOKEN }}
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./client
 
       - name: Deploy to GitHub Pages
-        run: gh-pages -d build -u "TamaImoisili" -b "gh-pages" -t "${{ secrets.GITHUB_TOKEN }}"
+        run: npm run deploy
+        env:
+          CI: false
         working-directory: ./client
