@@ -18,9 +18,14 @@ jobs:
         with:
           node-version: 14
 
-      - name: Set up Git credentials
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GH_TOKEN }}" > ~/.npmrc
-  
+      - name: Set Git Identity
+        run: |
+            git config user.email "tamaimoisili2243@gmail.com"
+            git config user.name "TamaImoisili"
+
+      - name: Use GH_TOKEN
+        run: echo ${{ secrets.GH_TOKEN }}
+
       - name: Install dependencies
         run: npm install
         working-directory: ./client
