@@ -20,8 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./client
 
       - name: Build and deploy
-        run: |
-            cd client 
-            npm run deploy
+        run: npm run deploy
+        working-directory: ./client
