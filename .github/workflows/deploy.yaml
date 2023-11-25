@@ -1,0 +1,28 @@
+name: CI and CD
+
+on: 
+    push:
+        branches: 
+            - main
+            
+jobs:
+    build-test-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Set up node
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 14
+            - run: npm install
+              working-directory: client
+            - run: npm run build
+            - name: deploy
+              uses: crazy-max/ghaction-github-pages@v1
+              with: 
+                target_branch: gh-pages
+                build_dir: build
+              env: 
+                GITHUB_TOKEN:
+                    ${{secrets.GH_TOKEN}}
