@@ -22,4 +22,6 @@ jobs:
         run: npm install
 
       - name: Build and deploy
-        run: npm run deploy
+        run: |
+            cd client 
+            npm run deploy
