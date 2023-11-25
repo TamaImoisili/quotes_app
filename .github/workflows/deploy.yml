@@ -18,7 +18,6 @@ jobs:
           
       - name: Install gh-pages
         run: npm install -g gh-pages
-        working-directory: ./client
 
       - name: Checkout code
         uses: actions/checkout@v2
