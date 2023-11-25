@@ -23,6 +23,7 @@ jobs:
 
       - name: Build
         run: npm run build
+        working-directory: ./client
 
       - name: Deploy to GitHub Pages
         run: npx gh-pages -d build -b main -u ${{ secrets.GH_TOKEN }}
