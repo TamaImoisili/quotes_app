@@ -18,6 +18,7 @@ jobs:
             - run: npm install
               working-directory: client
             - run: npm run build
+              working-directory: client
             - name: deploy
               uses: crazy-max/ghaction-github-pages@v1
               with: 
