@@ -1,0 +1,35 @@
+.QuoteContainer {
+    position: absolute;
+    background-color: #121313; /*#33BEC8; /* Replace with your desired color code or name */
+    border-radius: 8px;
+    text-align: center;
+    word-wrap: break-word;
+    width: auto;   /* Adjusted to 'auto' for dynamic width */
+    height: auto;
+    padding: 1em;
+}
+.QuoteText {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1em;
+    margin-bottom: 2em;
+    color: #f1e7ea;/*'#E20D53'*/
+}
+.QuoteText i{
+    margin-right: 0.3em; 
+    margin-left: 0.3em; 
+}
+.QuoteAuthor {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1em;
+    margin-bottom: 20em;
+    color: #f1e7ea;
+}
+.fa-quote-left{
+    font-size: 1em;
+    color: #f1e7ea;
+}
+.fa-quote-right{
+    font-size: 1em;
+    color: #f1e7ea;
+
+}
