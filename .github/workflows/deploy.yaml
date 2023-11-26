@@ -3,7 +3,7 @@ name: CI and CD
 on: 
     push:
         branches: 
-            - main
+            - develop
             
 jobs:
     build-test-deploy:
@@ -17,6 +17,8 @@ jobs:
                 node-version: 14
             - run: npm install
               working-directory: client
+            - name: Install fontawesome library module
+              run: npm install @fortawesome/fontawesome-svg-core
             - run: npm run build
               working-directory: client
             - name: deploy
