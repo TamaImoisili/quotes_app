@@ -17,7 +17,7 @@ function App() {
   //<QuoteContainer quote={staticQuote} author={staticAuthor.text} />
   return (
     <div className="App">
-    <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
+      <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
       <NewQuoteButton updateQuote={updateQuote}/>
       <FavouritesButton/>
     </div>
