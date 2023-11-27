@@ -13,8 +13,9 @@ function NewQuoteButton({ updateQuote }) {
       // const backgroundData = await backgroundResponse.json();
       // updateBackgroundPhoto(backgroundData);
       const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com'
+      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com/getRandomQuote'
       : 'http://localhost:3000/getRandomQuote';
+      console.log(process.env.NODE_ENV);
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
