@@ -8,7 +8,9 @@
     height: 1.5em; /* Adjust the height as needed */
     padding: 5px 5px; /* Adjust the padding as needed */
     font-size:1.5em; 
-    margin-right: 1em;
+    margin-right: 3em;
+    position: absolute;
+    top: 26.7em;
     transition: background-color 0.5s;
 }
 .NewQuoteButton:hover {
