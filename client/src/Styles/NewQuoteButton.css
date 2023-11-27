@@ -10,7 +10,7 @@
     font-size:1.5em; 
     margin-right: 3em;
     position: absolute;
-    top: 26.7em;
+    bottom: 25%;
     transition: background-color 0.5s;
 }
 .NewQuoteButton:hover {

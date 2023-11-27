@@ -1,6 +1,6 @@
 .App {
   background-color: #121313; /* Replace with your desired color code or name */
-  height: 100vh; /* Adjust the height as needed */
+  min-height: 100vh; /* Adjust the height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
