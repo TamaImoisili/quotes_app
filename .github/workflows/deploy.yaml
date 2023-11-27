@@ -4,6 +4,7 @@ on:
     push:
         branches: 
             - develop
+            - implementSSR
             
 jobs:
     build-test-deploy:
@@ -16,6 +17,8 @@ jobs:
               with: 
                 node-version: 14
             - run: npm install
+              working-directory: client
+            - run: npm install @fortawesome/fontawesome-svg-core
               working-directory: client
             - name: Install fontawesome library module
               run: npm install @fortawesome/fontawesome-svg-core
