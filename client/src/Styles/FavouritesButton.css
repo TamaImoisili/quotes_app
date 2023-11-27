@@ -14,5 +14,5 @@
     transition: background-color 0.5s;
 }
 .FavouritesButton:hover {
-    color: rgb(69, 121, 173); /* Change background color on hover */
+    color: red; /* Change background color on hover */
   }

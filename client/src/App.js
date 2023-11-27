@@ -2,15 +2,23 @@ import './App.css';
 import QuoteContainer from './Components/QuoteContainer';
 import NewQuoteButton from './Components/NewQuoteButton';
 import FavouritesButton from './Components/FavouritesButton';
+import React, { useState } from 'react';
 
 function App() {
-  const staticQuote = { text:'Climb the mountains and get their good tidings. Nature’s peace will flow into you as sunshine flows into trees. The winds will blow their own freshness into you, and the storms their energy, while cares will drop away from you like the leaves of Autumn.' }
-  const staticAuthor = {text: 'John Muir'};
+  const quote = { text: 'Welcome to my quote generator app' };
+  const author = { text: 'By Tama Imoisili' };
+  const [currentQuote, setCurrentQuote] = useState(quote);
+  const [currentAuthor, setCurrentAuthor] = useState( author);
+
+  const updateQuote = (newQuote) => {
+    setCurrentQuote({ text: newQuote.content });
+    setCurrentAuthor({ text: newQuote.author });
+  };
   //<QuoteContainer quote={staticQuote} author={staticAuthor.text} />
   return (
     <div className="App">
-    <QuoteContainer quote={staticQuote} author={staticAuthor.text} />
-      <NewQuoteButton/>
+    <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
+      <NewQuoteButton updateQuote={updateQuote}/>
       <FavouritesButton/>
     </div>
   );
