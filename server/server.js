@@ -25,7 +25,6 @@ app.get('/getRandomQuote', async (req, res) => {
     try {
       const apiUrl = 'https://api.quotable.io/random';
       const response = await fetch(apiUrl);
-      console.log(response);
       const data = await response.json();
       res.json(data);
     } catch (error) {
