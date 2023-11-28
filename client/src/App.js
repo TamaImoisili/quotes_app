@@ -5,6 +5,7 @@ import FavouritesButton from './Components/FavouritesButton';
 import SignInButton from './Components/SignInButton';
 import OptionsButton from './Components/OptionsButton';
 import React, { useState } from 'react';
+import NewImageButton from './Components/NewImageButton';
 
 function App() {
   const quote = { text: 'Welcome to my quote generator app' };
@@ -13,18 +14,21 @@ function App() {
   const [currentAuthor, setCurrentAuthor] = useState( author);
   const [backgroundPhoto, setBackgroundImage] = useState('/default.jpg');
 
-  const updateQuote = (newQuote, bgImage) => {
+  const updateQuote = (newQuote) => {
     setCurrentQuote({ text: newQuote.content });
     setCurrentAuthor({ text: newQuote.author });
-    setBackgroundImage(bgImage);
   };
+  const updateBgImage = (newImage) => {
+    setBackgroundImage(newImage);
+  }
 
   //<QuoteContainer quote={staticQuote} author={staticAuthor.text} />
   return (
     <div className="App">
       <div className="background-image" style={{ backgroundImage: `url(${backgroundPhoto.startsWith('http') ? '' : process.env.PUBLIC_URL}${backgroundPhoto})` }}></div>
       <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
-      <NewQuoteButton updateQuote={updateQuote} bgImage={backgroundPhoto}/>
+      <NewQuoteButton updateQuote={updateQuote}/>
+      <NewImageButton updateBgImage={updateBgImage}/>
       <FavouritesButton/>
       <SignInButton/>
       <OptionsButton/>
