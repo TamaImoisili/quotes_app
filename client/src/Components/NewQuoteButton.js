@@ -4,19 +4,21 @@ import '../Styles/NewQuoteButton.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons';
 
-function NewQuoteButton({ updateQuote }) {
+function NewQuoteButton({ updateQuote, bgImage }) {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
   const getRandomQuote = async () => {
     try {
       // Fetch a new background photo
-      // const backgroundResponse = await fetch( 'http://localhost:3000/getBackground');
-      // const backgroundData = await backgroundResponse.json();
-      // updateBackgroundPhoto(backgroundData);
       const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com/getRandomQuote'
-      : 'http://localhost:3000/getRandomQuote';
-      console.log(process.env.NODE_ENV);
-      const response = await fetch(apiUrl);
+      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com'
+      : 'http://localhost:3000';
+      const backgroundResponse = await fetch( `${apiUrl}/getBackground?width=${screenWidth}&height=${screenHeight}`);
+      const backgroundData = backgroundResponse.ok ? await backgroundResponse.json() : '/default.jpg';
+      const backgroundImageUrl = backgroundResponse.ok ? backgroundData.urls.regular : '/default.jpg';
+      console.log(backgroundImageUrl);
+      const response = await fetch(`${apiUrl}/getRandomQuote`);
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -24,7 +26,7 @@ function NewQuoteButton({ updateQuote }) {
 
       const newQuotedata = await response.json();
 
-      updateQuote(newQuotedata); // Call the updateQuote function from props
+      updateQuote(newQuotedata, backgroundImageUrl); // Call the updateQuote function from props
     } catch (error) {
       console.error('Error fetching data:', error);
     }

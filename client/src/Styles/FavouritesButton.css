@@ -1,7 +1,7 @@
 /* NewQuoteButton.css */
 .FavouritesButton {
-    background-color: #121313;
-    color: #f1e7ea;
+    background-color: rgba(18, 19, 19, 0);
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
     width: 1.5em; /* Adjust the width as needed */
@@ -11,7 +11,6 @@
     margin-left: 3em;
     position: absolute;
     bottom: 25%;
-    transition: background-color 0.5s;
 }
 .FavouritesButton:hover {
     color: red; /* Change background color on hover */

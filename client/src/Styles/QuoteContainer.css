@@ -1,6 +1,6 @@
 .QuoteContainer {
     position: absolute;
-    background-color: #121313; /*#33BEC8; /* Replace with your desired color code or name */
+    background-color: rgba(18, 19, 19, 0); /*#33BEC8; /* Replace with your desired color code or name */
     border-radius: 8px;
     text-align: center;
     word-wrap: break-word;
@@ -12,7 +12,7 @@
     font-family: 'Helvetica', sans-serif;
     font-size: 1em;
     margin-bottom: 2em;
-    color: #f1e7ea;/*'#E20D53'*/
+    color: #FFFFFF;/*'#E20D53'*/
 }∂
 .QuoteText i{
     margin-right: 0.3em; 
@@ -22,14 +22,14 @@
     font-family: 'Helvetica', sans-serif;
     font-size: 1em;
     margin-bottom: 20em;
-    color: #f1e7ea;
+    color: #FFFFFF;
 }
 .fa-quote-left{
     font-size: 1em;
-    color: #f1e7ea;
+    color: #FFFFFF;
 }
 .fa-quote-right{
     font-size: 1em;
-    color: #f1e7ea;
+    color: #FFFFFF;
 
 }
