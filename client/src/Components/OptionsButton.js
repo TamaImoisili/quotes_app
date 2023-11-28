@@ -1,4 +1,4 @@
-// FavouritesButton.js
+// Options.js
 import React from 'react';
 import '../Styles/OptionsButton.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

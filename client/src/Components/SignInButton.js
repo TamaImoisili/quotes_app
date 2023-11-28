@@ -1,4 +1,4 @@
-// FavouritesButton.js
+// SignInButton.js
 import React from 'react';
 import '../Styles/SignInButton.css'
 
