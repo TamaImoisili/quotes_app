@@ -1,3 +1,4 @@
+//QuoteContainer.js
 import React from 'react';
 import '../Styles/QuoteContainer.css';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
