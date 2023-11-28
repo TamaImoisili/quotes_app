@@ -11,7 +11,7 @@ function NewQuoteButton({ updateQuote}) {
       // Fetch a new background photo
       const apiUrl =`https://api.quotable.io/random`;
       
-      const response = await fetch(`${apiUrl}/getRandomQuote`);
+      const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
