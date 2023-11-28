@@ -9,7 +9,7 @@ function NewQuoteButton({ updateQuote}) {
   const getRandomQuote = async () => {
     try {
       // Fetch a new background photo
-      const apiUrl ='https://api.quotable.io/random';
+      const apiUrl =`https://api.quotable.io/random`;
       
       const response = await fetch(`${apiUrl}/getRandomQuote`);
       if (!response.ok) {
