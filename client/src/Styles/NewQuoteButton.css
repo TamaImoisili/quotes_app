@@ -10,7 +10,7 @@
     font-size:1.5em; 
     margin-right: 3em;
     position: absolute;
-    bottom: 25%;
+    bottom: 20%;
 }
 .NewQuoteButton:hover {
    color: rgb(69, 121, 173); /* Change background color on hover */

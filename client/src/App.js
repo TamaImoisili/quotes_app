@@ -16,7 +16,6 @@ function App() {
   const updateQuote = (newQuote, bgImage) => {
     setCurrentQuote({ text: newQuote.content });
     setCurrentAuthor({ text: newQuote.author });
-    console.log(bgImage, backgroundPhoto);
     setBackgroundImage(bgImage);
   };
 

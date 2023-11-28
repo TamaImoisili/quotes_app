@@ -17,7 +17,6 @@ function NewQuoteButton({ updateQuote, bgImage }) {
       const backgroundResponse = await fetch( `${apiUrl}/getBackground?width=${screenWidth}&height=${screenHeight}`);
       const backgroundData = backgroundResponse.ok ? await backgroundResponse.json() : '/default.jpg';
       const backgroundImageUrl = backgroundResponse.ok ? backgroundData.urls.regular : '/default.jpg';
-      console.log(backgroundImageUrl);
       const response = await fetch(`${apiUrl}/getRandomQuote`);
 
       if (!response.ok) {

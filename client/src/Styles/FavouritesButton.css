@@ -10,7 +10,7 @@
     font-size:1.5em; 
     margin-left: 3em;
     position: absolute;
-    bottom: 25%;
+    bottom: 20%;
 }
 .FavouritesButton:hover {
     color: red; /* Change background color on hover */
