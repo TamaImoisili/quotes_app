@@ -3,10 +3,10 @@
     color: #FFFFFF;
     border: none;
     cursor: pointer;
-    width: 2em; /* Adjust the width as needed */
+    width: 1.6em; /* Adjust the width as needed */
     height: 1.6em; /* Adjust the height as needed */
     padding: 5px 5px; /* Adjust the padding as needed */
-    font-size:1em; 
+    font-size:1.2em; 
     position: absolute;
     top: 5%;
     right: 1%;
