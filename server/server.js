@@ -33,8 +33,10 @@ app.get('/getRandomQuote', async (req, res) => {
     }
 });
 app.get('/getBackground', async (req, res) => {
+  const { width, height } = req.query;
+  
     try {
-      const response = await fetch(`https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=yQ9KO4B4hQ3PB68zH_p9329REx24t6hS0fn5eThGStw`);
+      const response = await fetch(`https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=yQ9KO4B4hQ3PB68zH_p9329REx24t6hS0fn5eThGStw&width=${width}&height=${height}`);
       const data = await response.json();
       res.json(data);
     } catch (error) {

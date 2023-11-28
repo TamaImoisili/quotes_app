@@ -1,5 +1,5 @@
-/* NewQuoteButton.css */
-  .NewQuoteButton {
+/* NewImageButton.css */
+.NewImageButton {
     background-color: rgba(18, 19, 19, 0);
     color: #FFFFFF;
     border: none;
@@ -8,10 +8,11 @@
     height: 1.5em; /* Adjust the height as needed */
     padding: 5px 5px; /* Adjust the padding as needed */
     font-size:1.5em; 
-    margin-right: 5em;
+    margin-right: 1em;
+    margin-left: 1em;
     position: absolute;
     bottom: 20%;
 }
-.NewQuoteButton:hover {
+.NewImageButton:hover {
    color: rgb(69, 121, 173); /* Change background color on hover */
   }
