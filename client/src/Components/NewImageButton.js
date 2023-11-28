@@ -10,10 +10,8 @@ function NewImageButton({ updateBgImage}) {
 
   const getNewImage = async () => {
       // Fetch a new background photo
-      const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com'
-      : 'http://localhost:3000';
-      const backgroundResponse = await fetch( `${apiUrl}/getBackground?width=${screenWidth}&height=${screenHeight}`);
+      const apiUrl = `https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=yQ9KO4B4hQ3PB68zH_p9329REx24t6hS0fn5eThGStw&width=${screenWidth}&height=${screenHeight}`;
+      const backgroundResponse = await fetch( apiUrl);
       const backgroundData = backgroundResponse.ok ? await backgroundResponse.json() : '/default.jpg';
       const backgroundImageUrl = backgroundResponse.ok ? backgroundData.urls.regular : '/default.jpg';
       updateBgImage(backgroundImageUrl)
