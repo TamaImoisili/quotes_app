@@ -9,9 +9,7 @@ function NewQuoteButton({ updateQuote}) {
   const getRandomQuote = async () => {
     try {
       // Fetch a new background photo
-      const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://tama-imoisili-quotes-app-2cb0e821d0e8.herokuapp.com'
-      : 'http://localhost:3000';
+      const apiUrl ='https://api.quotable.io/random';
       
       const response = await fetch(`${apiUrl}/getRandomQuote`);
       if (!response.ok) {
