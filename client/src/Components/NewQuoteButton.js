@@ -25,7 +25,7 @@ function NewQuoteButton({ updateQuote}) {
   };
   return (
     <button className="NewQuoteButton" onClick={getRandomQuote}>
-        <FontAwesomeIcon icon={faRandom} />
+        <FontAwesomeIcon icon={faRandom} title='Get new quote' />
     </button>
   );
 }

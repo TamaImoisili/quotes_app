@@ -1,12 +1,16 @@
 // SignInButton.js
 import React from 'react';
 import '../Styles/SignInButton.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
-function SignInButton({ onClick }) {
+function SignInButton({toggleMenu }) {
+
   return (
-    <button className="SignInButton" onClick={onClick}>
-        sign in
+    <button className="SignInButton" title='User account' onClick={toggleMenu}>
+         <FontAwesomeIcon icon={faUserCircle}/>
     </button>
+    
   );
 }
 

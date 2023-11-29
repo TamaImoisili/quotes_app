@@ -1,0 +1,33 @@
+/* SignInButton.css */
+.SignInSignOut {
+    background-color: rgb(19, 39, 59);
+    position: fixed;
+    cursor: pointer;
+    right: -100%; /* Place side menu off screen */
+    width: 0%;
+    height: 0%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.5s ease;
+    position: absolute;
+}
+.SignInSignOutButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;  
+    color: #FFFFFF;
+    z-index: 1;
+    background: none;
+    border: none;
+}
+.SignInSignOut.open {
+    top: 8.5%;
+    right: 3.5%;
+    width: 5em;
+    height: 1.8em;
+    background-color: rgb(19, 39, 59);
+  }
+.SignInSignOutButton:hover, .SignInSignOut:hover {
+    color: rgb(69, 121, 173); /* Change background color on hover */
+   }

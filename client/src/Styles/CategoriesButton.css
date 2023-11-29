@@ -1,5 +1,5 @@
-/* SignInButton.css */
-.SignInButton {
+/* CategoriesButton.css */
+.CategoriesButton {
     background-color: rgba(18, 19, 19, 0);
     color: #FFFFFF;
     border: none;
@@ -10,11 +10,12 @@
     font-size:1.2em; 
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 25%;
     transition: background-color 0.5s;
 }
 
-.SignInButton:hover {
+.CategoriesButton:hover {
     color: rgb(69, 121, 173); /* Change background color on hover */
    }
-   
+
+ 
