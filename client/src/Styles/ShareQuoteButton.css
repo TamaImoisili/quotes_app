@@ -1,19 +1,19 @@
-/* OptionsButton.css */
-.OptionsButton {
+/* ShareQuoteButton.css */
+.ShareQuoteButton {
     background-color: rgba(18, 19, 19, 0);
     color: #FFFFFF;
     border: none;
     cursor: pointer;
-    width: 1.6em; /* Adjust the width as needed */
+    width: 1.5em; /* Adjust the width as needed */
     height: 1.6em; /* Adjust the height as needed */
     padding: 5px 5px; /* Adjust the padding as needed */
     font-size:1.2em; 
     position: absolute;
     top: 5%;
-    right: 1%;
+    right: 35%;
     transition: background-color 0.5s;
 }
 
-.OptionsButton:hover {
+.ShareQuoteButton:hover {
     color: rgb(69, 121, 173); /* Change background color on hover */
    }

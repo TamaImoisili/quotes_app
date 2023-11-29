@@ -1,13 +1,20 @@
 // FavouritesButton.js
-import React from 'react';
+import React, {useState} from 'react';
 import '../Styles/FavouritesButton.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-function FavouritesButton({ onClick }) {
+function FavouritesButton() {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const AddToFavourites = () => {
+    // Toggle the pressed state
+    setIsPressed(!isPressed);
+  };
+
   return (
-    <button className="FavouritesButton" onClick={onClick}>
-        <FontAwesomeIcon icon={faHeart} />
+    <button className={`FavouritesButton ${isPressed ? 'pressed' : ''}`} title="Add to favourites" onClick={AddToFavourites} >
+          <FontAwesomeIcon icon={faHeart} />
     </button>
   );
 }

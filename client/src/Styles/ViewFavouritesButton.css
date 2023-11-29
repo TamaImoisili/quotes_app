@@ -1,5 +1,5 @@
-/* SignInButton.css */
-.SignInButton {
+/* ViewFavourites.css */
+.ViewFavourites {
     background-color: rgba(18, 19, 19, 0);
     color: #FFFFFF;
     border: none;
@@ -10,11 +10,10 @@
     font-size:1.2em; 
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 15%;
     transition: background-color 0.5s;
 }
 
-.SignInButton:hover {
+.ViewFavourites:hover {
     color: rgb(69, 121, 173); /* Change background color on hover */
    }
-   

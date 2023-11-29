@@ -22,6 +22,8 @@ jobs:
               working-directory: client
             - name: Install fontawesome library module
               run: npm install @fortawesome/fontawesome-svg-core
+            - name: Install supabase
+              run: npm install @supabase/supabase-js
             - run: npm run build
               working-directory: client
             - name: deploy

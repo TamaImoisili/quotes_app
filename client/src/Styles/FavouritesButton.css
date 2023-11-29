@@ -15,3 +15,7 @@
 .FavouritesButton:hover {
     color: red; /* Change background color on hover */
   }
+
+  .FavouritesButton.pressed {
+    color: red; /* Change this to the color you want when pressed */
+  }
