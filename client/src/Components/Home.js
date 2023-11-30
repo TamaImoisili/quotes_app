@@ -38,7 +38,6 @@ function Home() {
         <NewImageButton updateBgImage={updateBgImage}/>
         <FavouritesButton/>
         <SignInButton toggleMenu={toggleMenu}/>
-        <SignInSignOut isOpen={isMenuOpen}/>
         <ViewFavourites/>
         <CategoriesButton/>
         <ShareQuoteButton/>
