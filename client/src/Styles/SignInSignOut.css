@@ -1,15 +1,21 @@
 /* SignInButton.css */
 .SignInSignOut {
     background-color: rgb(19, 39, 59);
+    left: 0%;
+    top: 0%;
     cursor: pointer;
-    width: 0%;
-    height: 0%;
+    width: 0em;
+    height:0em;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: left 0.5s ease;
     position: absolute;
 }
 .SignInSignOutButton{
+    left: 0%;
+    top: 0%;
+    width: 0em;
+    height: 0em;
     font-size: 0;
     display: flex;
     justify-content: center;
