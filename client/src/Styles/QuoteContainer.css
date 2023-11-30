@@ -1,6 +1,6 @@
 /* QuoteContainer.css */
 .QuoteContainer {
-    position: fixed;
+    position: absolute;
     background-color: rgba(18, 19, 19, 0); /*#33BEC8; /* Replace with your desired color code or name */
     border-radius: 8px;
     text-align: center;
@@ -11,7 +11,7 @@
 .QuoteText {
     font-family: 'Helvetica', sans-serif;
     font-size: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 2%;
     color: #FFFFFF;/*'#E20D53'*/
 }∂
 .QuoteText i{
@@ -21,7 +21,7 @@
 .QuoteAuthor {
     font-family: 'Helvetica', sans-serif;
     font-size: 1em;
-    margin-bottom: 20em;
+    margin-bottom: 20%;
     color: #FFFFFF;
 }
 .fa-quote-left{

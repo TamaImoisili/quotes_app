@@ -1,6 +1,7 @@
 .Home {
     background-color: #121313; /* Replace with your desired color code or name */
-    min-height: 100vh; /* Adjust the height as needed */
+    min-height: fit-content; /* Adjust the height as needed */
+    min-width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
