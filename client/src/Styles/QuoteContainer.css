@@ -7,10 +7,12 @@
     word-wrap: break-word;
     width: auto;   /* Adjusted to 'auto' for dynamic width */
     height: 30%;
+    padding: 1em;
+    font-size: 100%;
 }
 .QuoteText {
     font-family: 'Helvetica', sans-serif;
-    font-size: 1em;
+    font-size: 100%;
     margin-bottom: 2%;
     color: #FFFFFF;/*'#E20D53'*/
 }∂
@@ -20,16 +22,16 @@
 }
 .QuoteAuthor {
     font-family: 'Helvetica', sans-serif;
-    font-size: 1em;
+    font-size: 100%;
     margin-bottom: 20%;
     color: #FFFFFF;
 }
 .fa-quote-left{
-    font-size: 1em;
+    font-size: 100%;
     color: #FFFFFF;
 }
 .fa-quote-right{
-    font-size: 1em;
+    font-size: 100%;
     color: #FFFFFF;
 
 }
