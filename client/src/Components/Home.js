@@ -6,6 +6,7 @@ import SignInButton from './SignInButton';
 import React, { useState } from 'react';
 import NewImageButton from './NewImageButton';
 import ViewFavourites from './ViewFavourtiesButton';
+import SignInSignOut from './SignInSignOut';
 import CategoriesButton from './CategoriesButton';
 import ShareQuoteButton from './ShareQuoteButton';
 
@@ -32,14 +33,15 @@ function Home() {
   return (
     <div className="Home">
       <div className="background-image" style={{ backgroundImage: `url(${backgroundPhoto.startsWith('http') ? '' : process.env.PUBLIC_URL}${backgroundPhoto})` }}></div>
-        <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
         <NewQuoteButton updateQuote={updateQuote}/>
         <NewImageButton updateBgImage={updateBgImage}/>
         <FavouritesButton/>
         <SignInButton toggleMenu={toggleMenu}/>
+        <SignInSignOut isOpen={isMenuOpen}/>
         <ViewFavourites/>
         <CategoriesButton/>
         <ShareQuoteButton/>
+        <QuoteContainer quote={currentQuote.text} author={currentAuthor.text} />
     </div>
   );
 }
