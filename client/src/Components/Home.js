@@ -6,7 +6,6 @@ import SignInButton from './SignInButton';
 import React, { useState } from 'react';
 import NewImageButton from './NewImageButton';
 import ViewFavourites from './ViewFavourtiesButton';
-import SignInSignOut from './SignInSignOut';
 import CategoriesButton from './CategoriesButton';
 import ShareQuoteButton from './ShareQuoteButton';
 
