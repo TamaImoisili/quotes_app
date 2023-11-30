@@ -1,7 +1,6 @@
 /* SignInButton.css */
 .SignInSignOut {
     background-color: rgb(19, 39, 59);
-    position: fixed;
     cursor: pointer;
     width: 0%;
     height: 0%;
