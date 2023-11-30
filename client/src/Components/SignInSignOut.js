@@ -6,9 +6,10 @@ function SignInSignOut({onClick, isOpen }) {
 
   return (
     <div className= {`SignInSignOut ${isOpen ? 'open' : ''}`}>
-        <button className="SignInSignOutButton" onClick={onClick}>
-            sign in
+        {isOpen && <button className= {`SignInSignOutButton ${isOpen ? 'open' : ''}`} onClick={onClick}>
+            sign out
         </button>
+        }
     </div>
     
   );
