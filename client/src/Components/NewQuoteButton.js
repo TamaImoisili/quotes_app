@@ -9,7 +9,7 @@ function NewQuoteButton({ updateQuote}) {
   const getRandomQuote = async () => {
     try {
       // Fetch a new background photo
-      const apiUrl =`https://api.quotable.io/random`;
+      const apiUrl =`https://gleaming-sable-ff925d.netlify.app/.netlify/functions/api/getRandom`;
       
       const response = await fetch(apiUrl);
       if (!response.ok) {
