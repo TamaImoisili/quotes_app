@@ -1,0 +1,70 @@
+/* DeleteAccPage container */
+.DeletePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 65%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Delete Input fields */
+.delete-input-fields{
+    margin-top: 30px;
+}
+.delete-email-input, 
+.delete-password-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white; /* Input background color */
+}
+
+.delete-email-input:focus,
+.delete-password-input:focus {
+  border: 2px solid #3498db; /* Border color on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Confirm and delete buttons */
+.ConfirmAndCancel{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+  
+.confirm-delete{
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    padding: 8px;
+    transition: background-color 0.3s; 
+    border-right: solid;
+} 
+.cancel-delete {
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    padding: 9px;
+    transition: background-color 0.3s; 
+}  
+.confirm-delete:hover, .cancel-delete:hover {
+    background-color: #297dbf; /* Hover border color */
+  }

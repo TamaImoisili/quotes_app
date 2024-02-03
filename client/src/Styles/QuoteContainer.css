@@ -1,17 +1,18 @@
 /* QuoteContainer.css */
 .QuoteContainer {
-    position:relative;
+    position:relative; /*used to be relative*/
     background-color: rgba(18, 19, 19, 0); /*#33BEC8; /* Replace with your desired color code or name */
     border-radius: 8px;
     text-align: center;
     word-wrap: break-word;
     width: auto;   /* Adjusted to 'auto' for dynamic width */
-    height: 30%;
+    height: 16em;
     padding: 1em;
+    z-index: 2;
 }
 .QuoteText {
     font-family: 'Helvetica', sans-serif;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-bottom: 2em;
     color: #FFFFFF;/*'#E20D53'*/
 }∂
@@ -21,7 +22,7 @@
 }
 .QuoteAuthor {
     font-family: 'Helvetica', sans-serif;
-    font-size: 1em;
+    font-size: 1.3em;
     margin-bottom: 5em;
     color: #FFFFFF;
 }

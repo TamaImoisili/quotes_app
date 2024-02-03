@@ -4,7 +4,7 @@ import '../Styles/ViewFavouritesButton.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
-function ViewFavourites({ onClick }) {
+function ViewFavourites({ onClick, userID }) {
   return (
     <button className="ViewFavourites" title='View favourites'onClick={onClick}>
         <FontAwesomeIcon icon={faHeartCircleCheck}/>

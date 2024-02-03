@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons';
 
 function CategoriesButton({ onClick }) {
+  
   return (
     <button className="CategoriesButton" onClick={onClick} title='Categories'>
          <FontAwesomeIcon icon={faTag}/> 
