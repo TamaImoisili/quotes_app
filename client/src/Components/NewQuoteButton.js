@@ -4,14 +4,13 @@ import '../Styles/NewQuoteButton.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRandom } from '@fortawesome/free-solid-svg-icons';
 
-function NewQuoteButton({ updateQuote}) {
+function NewQuoteButton({ quoteURL, updateQuote, favesPressed}) {
   
   const getRandomQuote = async () => {
     try {
       // Fetch a new background photo
-      const apiUrl =`https://gleaming-sable-ff925d.netlify.app/.netlify/functions/api/getRandom`;
-      
-      const response = await fetch(apiUrl);
+      console.log(quoteURL);
+      const response = await fetch(quoteURL);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -19,6 +18,7 @@ function NewQuoteButton({ updateQuote}) {
       const newQuotedata = await response.json();
 
       updateQuote(newQuotedata); // Call the updateQuote function from props
+      favesPressed(false);
     } catch (error) {
       console.error('Error fetching data:', error);
     }

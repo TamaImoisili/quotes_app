@@ -1,24 +1,38 @@
 .Home {
     background-color: #121313; /* Replace with your desired color code or name */
-    min-height: fit-content; /* Adjust the height as needed */
-    min-width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
   }
   
-  .background-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: brightness(0.3);
+  .background-image-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center; /* Center content horizontally and vertically */
   }
+  
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for transparency */
+    z-index: 1; /* Ensure the overlay is above the background image */
+  }
+  
   
   .tooltip {
     position: relative;
