@@ -164,9 +164,9 @@ const SignInPopup = ({ apiURL, setDemo, setGlobalError, isOpen, setVisibility, s
 
     // Open a new popup window for Google Sign-In
     var popupWindow = window.open(googleSignInUrl, 'GoogleSignin','width=1000,height=1000');
-    const checkPopup = setInterval(()=>{
-      if(!popupWindow || !popupWindow.closed) return;
-    }, 1000);
+    // const checkPopup = setInterval(()=>{
+    //   if(!popupWindow || !popupWindow.closed) return;
+    // }, 1000);
     if (popupWindow && !popupWindow.closed) {
       // Focus the new popup window
       popupWindow.focus();
