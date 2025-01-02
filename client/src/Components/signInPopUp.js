@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import '../Styles/signInPopUp.css'; // Adjust the path based on your project structure
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faApple } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
-const SignInPopup = ({ setDemo, setGlobalError, isOpen, setVisibility, setAuth, setUserID, updateIsOpen }) => {
+const SignInPopup = ({ apiURL, setDemo, setGlobalError, isOpen, setVisibility, setAuth, setUserID, updateIsOpen }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -49,8 +48,7 @@ const SignInPopup = ({ setDemo, setGlobalError, isOpen, setVisibility, setAuth, 
         setError("Please enter your password");
         return;
       }
-      // Make a POST request to your server endpoint
-//https://quotes-server.netlify.app/.netlify/functions/api/  is the link to my server 
+      // Make a POST request to your server endpoint=
       const response = await fetch('http://localhost:8888/.netlify/functions/api/signin', {
         method: 'POST',
         headers: {
@@ -147,16 +145,43 @@ const SignInPopup = ({ setDemo, setGlobalError, isOpen, setVisibility, setAuth, 
     // Your logic for handling forgot password goes here
   };
 
-  const handleSocialSignIn = (provider) => {
+  const handleSocialSignIn = async (provider) => {
     // Your logic for signing in with a social provider goes here
-
+    // Make a POST request to your server endpoint for sign-in
+    if (provider==='google'){
+      const response = await fetch('http://localhost:8888/.netlify/functions/api/signinWithGoogle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const responseData = await response.json(); 
+      console.log(responseData.data.url);
+      openSignInPopup(responseData.data.url);
+    }
   };
+  function openSignInPopup(googleSignInUrl) {
 
+    // Open a new popup window for Google Sign-In
+    var popupWindow = window.open(googleSignInUrl, 'GoogleSignin','width=1000,height=1000');
+    const checkPopup = setInterval(()=>{
+      if(!popupWindow || !popupWindow.closed) return;
+    }, 1000);
+    if (popupWindow && !popupWindow.closed) {
+      // Focus the new popup window
+      popupWindow.focus();
+  } else {
+      // Handle the case where the popup window could not be opened
+      console.error('Failed to open popup window for Google Sign-In');
+  }
+}
   const handleDemoMode = () => {
     setDemo(true);
     handleSignIn('tamaimoisili3@gmail.com', 'tama1234');
   };
+  const handlefacebook  = async () => {
 
+  };
   // Inside your SignInPopup component
   return (
     <div className={`sign-in-popup ${isOpen ? 'visible' : ''}`}>
@@ -208,8 +233,8 @@ const SignInPopup = ({ setDemo, setGlobalError, isOpen, setVisibility, setAuth, 
         <button title="Sign in with google" className="google-button" onClick={() => handleSocialSignIn('google')}>
           <FontAwesomeIcon icon={faGoogle} />
         </button>
-        <button title="Sign in with apple" className="apple-button" onClick={() => handleSocialSignIn('apple')}>
-          <FontAwesomeIcon icon={faApple} />
+        <button title="Sign in with facebook" className="facebook-button" onClick={() => handlefacebook('facebook')}>
+          <FontAwesomeIcon icon={faFacebook} />
         </button>
       </div>
       <div className="action-buttons-sign-in">
