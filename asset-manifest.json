@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/quotes_app/static/css/main.05966d75.css",
+    "main.js": "/quotes_app/static/js/main.6e4e3656.js",
+    "static/js/787.d5fa4d18.chunk.js": "/quotes_app/static/js/787.d5fa4d18.chunk.js",
+    "index.html": "/quotes_app/index.html",
+    "main.05966d75.css.map": "/quotes_app/static/css/main.05966d75.css.map",
+    "main.6e4e3656.js.map": "/quotes_app/static/js/main.6e4e3656.js.map",
+    "787.d5fa4d18.chunk.js.map": "/quotes_app/static/js/787.d5fa4d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05966d75.css",
+    "static/js/main.6e4e3656.js"
+  ]
+}
