@@ -27,9 +27,9 @@ router.get(`/hello`, (req, res) => {
   res.json({ message: "Hello from the serverless!" });
 });
 
-router.get(`/getRandom`, async (req, res) => {
+router.get('/getRandom', async (req, res) => {
   try {
-    const apiUrl = 'https://api.quotable.io/random';
+    const apiUrl = 'https://zenquotes.io/api/random';
     const response = await fetch(apiUrl);
     const data = await response.json();
     res.json(data);
@@ -159,6 +159,22 @@ router.post('/signout', async (req, res) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+//forgot password route
+app.options('/forgot', handleCorsPreflight);
+router.post('/forgot', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      console.log(email);
+      return res.status(400).json({ error: 'Email is required' });
+    }
+    const {data, error} = supabase.auth.resetPasswordForEmail
+  } catch (error) {
+    console.error('Unexpected error:', error.message);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // signin route
 app.options('/signin', handleCorsPreflight);
 router.post('/signin', async (req, res) => {
@@ -198,10 +214,13 @@ router.post('/signin', async (req, res) => {
   }
 });
 
-// signin route
-app.options('/signinWithApple', handleCorsPreflight);
-router.post('/signinWithApple', async (req, res) => {
+//googele signin route
+app.options('/signinWithGoogle', handleCorsPreflight);
+router.post('/signinWithGoogle', async (req, res) => {
   try{
+    // console.log("Before sign in ");
+
+    console.log("No wahala 1");
     const {data, error} = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
@@ -211,18 +230,21 @@ router.post('/signinWithApple', async (req, res) => {
         },
       },
     })
+    console.log("Data: ", data);
     if (error){
+      console.log(error);
       console.error('Failed to sign-in');
       return null;
     }else{
       return res.json({message: 'Sign-in successful', data});
     }
+    res.json({ message: "Hello from the serverless!" });
   }catch (error) {
+    console.log("Before sign in ");
     console.error('Unexpected error during sign-in:', error.message);
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 
 // Add to favourites route
 router.post('/addfave', async (req, res) => {
