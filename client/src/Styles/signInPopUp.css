@@ -70,7 +70,7 @@
 
 /* Action buttons */
 .action-buttons-sign-in {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -120,7 +120,7 @@
     margin: 30px 0;
   }
   
-  .apple-button{
+  .facebook-button{
     cursor: pointer;
     border: none;
     background: none;
@@ -138,12 +138,13 @@
     margin: 0 5px;
     padding: 5px;
     transition: border-color 0.3s;
-    font-size: 15px;
+    font-size: 18px;
   }
   
-  .apple-button:hover,
+  .facebook-button:hover,
   .google-button:hover {
     border-color: #3498db; /* Hover color */
+    color: #3498db;
   }
   
   /* Demo mode button */
@@ -174,4 +175,7 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
+  }
+  .privacypolicy:hover{
+    background-color: #297dbf; /* Hover background color */
   }

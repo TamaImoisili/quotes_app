@@ -27,8 +27,11 @@ function Home() {
     const [userId, setUserID] = useState(0);
     const [error, setError] = useState(null);
     const [isPressed, setIsPressed] = useState(false);
-    const defaultURL = 'https://api.quotable.io/random';
-    const [quoteURL, updateURL] = useState(defaultURL);
+    const defaultURL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:8888/.netlify/functions/api' // Local API URL
+  : 'https://quotes-server.netlify.app/.netlify/functions/api'; // Production URL
+    console.log(defaultURL);
+    const [quoteURL, updateURL] = useState(`${defaultURL}/getRandom`);
     const [isCategoryModalOpen, setCategoryModalOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [errorStatus, setErrorStatus] = useState(2);
@@ -38,8 +41,8 @@ function Home() {
     const [delteAccount, setDeleteAccount] = useState(false);
 
     const updateQuote = (newQuote) => {
-        setCurrentQuote({ text: newQuote.content });
-        setCurrentAuthor({ text: newQuote.author });
+        setCurrentQuote({ text: newQuote.q });
+        setCurrentAuthor({ text: newQuote.a });
     };
     const updateBgImage = (newImage) => {
         setBackgroundImage(newImage);
@@ -73,9 +76,9 @@ function Home() {
         var updatedURL = "";
 
         if (category === "") {
-            updatedURL = defaultURL;
+            updatedURL = quoteURL;
         } else {
-            updatedURL = `${defaultURL}?tags=${category}`;
+            updatedURL = `${quoteURL}?tags=${category}`;
         }
 
         setSelectedCategory(category);
@@ -132,7 +135,7 @@ function Home() {
                 <div className="background-image" style={{ backgroundImage: `url(${backgroundPhoto.startsWith('http') ? '' : process.env.PUBLIC_URL}${backgroundPhoto})` }}></div>
                 <div className="overlay"></div>
             </div>
-            {downloadStatus && <NewQuoteButton quoteURL={quoteURL} updateQuote={updateQuote} favesPressed={setIsPressed} />}
+            {downloadStatus && <NewQuoteButton quoteURL={quoteURL} defaultURL={defaultURL} updateQuote={updateQuote} favesPressed={setIsPressed} />}
             {downloadStatus && <NewImageButton updateBgImage={updateBgImage} />}
             {downloadStatus && <FavouritesButton isPressed={isPressed} setIsPressed={setIsPressed} isAuthenticated={isAuthenticated} user_id={userId} quoteMacro={quote} authorMacro={author} setError={setError} />}
             {downloadStatus && <SignInButton toggleMenu={toggleMenu} />}
