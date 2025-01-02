@@ -24,7 +24,7 @@ const handleCorsPreflight = (req, res, next) => {
 };
 
 router.get(`/hello`, (req, res) => {
-  res.json({ message: "Hello from the serverless! " });
+  res.json({ message: "Hello from the serverless! (difference test)" });
 });
 
 router.get('/getRandom', async (req, res) => {
